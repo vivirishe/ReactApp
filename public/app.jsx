@@ -1,4 +1,16 @@
+// Pulling the dom into a React component
+// takes one argument and options object
+var Greeter = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <h1> React! </h1>
+      </div>
+    );
+  }
+});
+
 ReactDOM.render(
-  <h1> React! </h1>,
+  <Greeter/>,
   document.getElementById('app')
 );
