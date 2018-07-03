@@ -1,11 +1,18 @@
 // Pulling the dom into a React component
 // takes one argument and options object
-// only one root (div) to render the view 
+// only one root (div) to render the view
 var Greeter = React.createClass({
+  getDefaultProps: function () {
+    return {
+      name: 'React'
+    };
+  },
   render: function() {
+    var name = this.props.name;
+
     return (
       <div>
-        <h1> React! </h1>
+        <h1> Hello {name}! </h1>
         <p>This is from the component</p>
       </div>
     );
@@ -13,6 +20,6 @@ var Greeter = React.createClass({
 });
 
 ReactDOM.render(
-  <Greeter/>,
+  <Greeter name="Vivi"/>,
   document.getElementById('app')
 );
