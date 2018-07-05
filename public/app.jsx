@@ -10,7 +10,7 @@ var Greeter = React.createClass({
   },
   render: function() {
     var name = this.props.name;
-    var contentMessage = this.props.contentMessage;
+    // var contentMessage = this.props.contentMessage;
 
     return (
       <div>
@@ -25,6 +25,6 @@ var firstName = 'Vivi';
 var contentMessage = 'This is kinda cool.';
 
 ReactDOM.render(
-  <Greeter name={firstName} />,
+  <Greeter name={firstName} message={contentMessage}/>,
   document.getElementById('app')
 );
