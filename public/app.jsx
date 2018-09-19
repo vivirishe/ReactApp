@@ -8,6 +8,12 @@ var Greeter = React.createClass({
       contentMessage: 'This is from the component'
     };
   },
+  onButtonClick: function (e) {
+    e.preventDefault();
+
+    var name = this.refs.name.value;
+    alert(name);
+  },
   render: function() {
     var name = this.props.name;
     // var contentMessage = this.props.contentMessage;
@@ -16,6 +22,12 @@ var Greeter = React.createClass({
       <div>
         <h1> Hello {name}! </h1>
         <p>{contentMessage}</p>
+
+        // onsubmit expects a function
+        <form onSubmit={this.onButtonClick}>
+          <input type="text" ref="name"/>
+          <button>Set Name</button>
+        </form>
       </div>
     );
   }
